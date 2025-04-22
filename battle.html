@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Battle Arena</title>
+  <link rel="stylesheet" href="css/style.sheet.css" />
+  <link rel="stylesheet" href="css/style.battle.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <h1 class="site-title"><em>Battle Arena</em></h1>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Events.html">Events</a></li>
+        <li><a href="battle.html" class="active">Battle</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="Store.html">Store</a></li>
+        <li><a href="Location.html">Location</a></li>
+        <li><a href="Contact%20Us.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="card-roster">
+    <img src="images/cards/art.front.webp" class="roster-card" draggable="true" data-id="art">
+    <img src="images/cards/capt.s.front.webp" class="roster-card" draggable="true" data-id="spaulding">
+    <img src="images/cards/m.m.front.webp" class="roster-card" draggable="true" data-id="myers">
+    <img src="images/cards/jason.front.webp" class="roster-card" draggable="true" data-id="jason">
+    <img src="images/cards/annabelle.front.webp" class="roster-card" draggable="true" data-id="annabelle">
+    <img src="images/cards/chucky.front.webp" class="roster-card" draggable="true" data-id="chucky">
+    <img src="images/cards/nun.front.webp" class="roster-card" draggable="true" data-id="nun">
+    <img src="images/cards/freddy.front.webp" class="roster-card" draggable="true" data-id="freddy">
+    <img src="images/cards/ghostface.front.webp" class="roster-card" draggable="true" data-id="ghostface">
+    <img src="images/cards/penny.front.webp" class="roster-card" draggable="true" data-id="penny">
+    <img src="images/cards/priest.front.webp" class="roster-card" draggable="true" data-id="priest">
+    <img src="images/cards/hell.front.webp" class="roster-card" draggable="true" data-id="hellraiser">
+  </div>
+
+  <div class="arena">
+    <div id="drop1" class="drop-zone" ondragover="allowDrop(event)" ondrop="dropCard(event, 'fighter1')">Drop Fighter 1 Here</div>
+    <div class="vs">VS</div>
+    <div id="drop2" class="drop-zone" ondragover="allowDrop(event)" ondrop="dropCard(event, 'fighter2')">Drop Fighter 2 Here</div>
+  </div>
+
+  <button onclick="startBattle()">BATTLE!</button>
+  <button id="resetButton" onclick="resetBattle()">RESET</button>
+
+  <div id="winnerDisplay"></div>
+  <div id="overlay"></div>
+
+  <script>
+    let selectedFighters = {
+      fighter1: null,
+      fighter2: null
+    };
+
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("open");
+    }
+
+    const fighterImages = {
+      art: {
+        front: 'images/cards/art.front.webp',
+        back: 'images/cards/art.back.webp'
+      },
+      spaulding: {
+        front: 'images/cards/capt.s.front.webp',
+        back: 'images/cards/capt.s.back.webp'
+      },
+      myers: {
+        front: 'images/cards/m.m.front.webp',
+        back: 'images/cards/m.m.back.webp'
+      },
+      jason: {
+        front: 'images/cards/jason.front.webp',
+        back: 'images/cards/jason.back.webp'
+      },
+      annabelle: {
+        front: 'images/cards/annabelle.front.webp',
+        back: 'images/cards/annabelle.back.webp'
+      },
+      chucky: {
+        front: 'images/cards/chucky.front.webp',
+        back: 'images/cards/chucky.back.webp'
+      },
+      nun: {
+        front: 'images/cards/nun.front.webp',
+        back: 'images/cards/nun.back.webp'
+      },
+      freddy: {
+        front: 'images/cards/freddy.front.webp',
+        back: 'images/cards/freddy.back.webp'
+      },
+      ghostface: {
+        front: 'images/cards/ghostface.front.webp',
+        back: 'images/cards/ghostface.back.webp'
+      },
+      penny: {
+        front: 'images/cards/penny.front.webp',
+        back: 'images/cards/penny.back.webp'
+      },
+      priest: {
+        front: 'images/cards/priest.front.webp',
+        back: 'images/cards/priest.back.webp'
+      },
+      hellraiser: {
+        front: 'images/cards/hell.front.webp',
+        back: 'images/cards/hell.back.webp'
+      }
+    };
+
+    function allowDrop(e) {
+      e.preventDefault();
+      e.currentTarget.classList.add("hover");
+    }
+
+    document.querySelectorAll(".drop-zone").forEach(zone => {
+      zone.addEventListener("dragleave", e => {
+        e.currentTarget.classList.remove("hover");
+      });
+    });
+
+    document.querySelectorAll(".roster-card").forEach(card => {
+      card.addEventListener("dragstart", e => {
+        e.dataTransfer.setData("text/plain", e.target.getAttribute("data-id"));
+      });
+    });
+
+    function dropCard(e, fighterKey) {
+      e.preventDefault();
+      const id = e.dataTransfer.getData("text/plain");
+      selectedFighters[fighterKey] = id;
+
+      const frontImg = fighterImages[id].front;
+      const backImg = fighterImages[id].back;
+
+      e.target.innerHTML = `
+        <div class='card-flip'>
+          <div class='card-inner'>
+            <div class='card-front'><img src='${frontImg}' /></div>
+            <div class='card-back'><img src='${backImg}' /></div>
+          </div>
+        </div>
+      `;
+      e.target.classList.remove("hover");
+    }
+
+    function startBattle() {
+      const f1 = selectedFighters.fighter1;
+      const f2 = selectedFighters.fighter2;
+      if (!f1 || !f2) {
+        alert("Choose both fighters by dragging cards into the boxes.");
+        return;
+      }
+
+      const overlay = document.getElementById("overlay");
+      overlay.style.opacity = 1;
+
+      setTimeout(() => {
+        const winner = Math.random() < 0.5 ? f1 : f2;
+        const winnerCard = fighterImages[winner].front;
+
+        document.getElementById("drop1").style.display = "none";
+        document.getElementById("drop2").style.display = "none";
+        document.querySelector(".vs").style.display = "none";
+        overlay.style.opacity = 0;
+
+        const display = document.getElementById("winnerDisplay");
+        display.innerHTML = `Winner: <strong>${winner.replace(/^([a-z])/, c => c.toUpperCase())}</strong><br><img src='${winnerCard}' style='margin-top: 1rem; width: 200px; border: 3px solid red;'>`;
+        display.style.display = "block";
+        document.getElementById("resetButton").style.display = "inline-block";
+      }, 1000);
+    }
+
+    function resetBattle() {
+      document.getElementById("drop1").innerHTML = "Drop Fighter 1 Here";
+      document.getElementById("drop2").innerHTML = "Drop Fighter 2 Here";
+      document.getElementById("drop1").style.display = "flex";
+      document.getElementById("drop2").style.display = "flex";
+      document.querySelector(".vs").style.display = "block";
+      document.getElementById("winnerDisplay").style.display = "none";
+      document.getElementById("resetButton").style.display = "none";
+      selectedFighters.fighter1 = null;
+      selectedFighters.fighter2 = null;
+    }
+  </script>
+</body>
+</html>
