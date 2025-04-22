@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE ICEBOX</title>
+  <link rel="stylesheet" href="css/style.sheet.css">
+  <link rel="stylesheet" href="css/style.Menu.css">
+</head>
+<body class="Menu-page">
+
+  <nav>
+    <div class="nav-container">
+      <h1><em>The Ice Box</em></h1>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Events.html">Events</a></li>
+        <li><a href="Battle.html">Battle</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="Store.html">Store</a></li>
+        <li><a href="Location.html">Location</a></li>
+        <li><a href="Contact%20Us.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="menu-box-wrapper">
+    <div class="frosted-menu-box">
+      <h2 class="menu-warning">Try the Food.<strong> If You Dare!!!</strong></h2>
+
+      <table class="menu-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bat Wings</td>
+            <td>6 Black Bat Wings. Marinated in a "Morgue Sauce" and injected with bloody mary mixture.</td>
+            <td>$12.99</td>
+          </tr>
+          <tr>
+            <td>Finger Sticks</td>
+            <td>Two fried "fingers" battered to golden perfection. (Not real fingers... we think.)</td>
+            <td>$9.99</td>
+          </tr>
+          <tr>
+            <td>Brain Nachos</td>
+            <td>Cinnamon sugar chips, drizzled with blood sauce, topped with gummy brain bites.</td>
+            <td>$14.99</td>
+          </tr>
+          <tr>
+            <td>Pizza Skulls</td>
+            <td>3 skull-shaped pizzas with your choice of cheese, pepperoni, or sausage filling.</td>
+            <td>$12.99</td>
+          </tr>
+          <tr>
+            <td>Fried Worms</td>
+            <td>Curly fries (fried worms) with blood-red ketchup dipping sauce.</td>
+            <td>$9.99</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("open");
+    }
+  </script>
+
+</body>
+</html>
+

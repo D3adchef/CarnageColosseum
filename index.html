@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carnage Colosseum</title>
+  <link rel="stylesheet" href="css/style.sheet.css" />
+  <link rel="stylesheet" href="css/style.Home.css" />
+</head>
+<body class="Home-page">
+
+  <nav>
+    <div class="nav-container">
+      <h1><em>Carnage Colosseum</em></h1>
+
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Events.html">Events</a></li>
+        <li><a href="Battle.html">Battle</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="Store.html">Store</a></li>
+        <li><a href="Location.html">Location</a></li>
+        <li><a href="Contact Us.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-content">
+    <div class="content-overlay">
+      <h2 class="warning">Enter At Your Own Risk!!!</h2>
+      <h3>Carnage Colosseum Home of the <em>CARNAGE PALS</em></h3>
+      <p>We have brought together a collection of some of the scariest Horror 
+        characters ever.</p>
+
+      <p>They will battle it out inside our <strong>Hell Cage</strong>. Cheer 
+        for your favorite character, and <strong>PRAY</strong> they win!!!</p>
+
+      <p>Don't forget to visit <strong>THE MORGUE</strong> to get your favorite
+        character’s merch — and if they lost, maybe a body part to take home.</p>
+
+      <p>For all of your culinary delights, come to <strong>The Icebox</strong>.
+         Enjoy some bloody good treats, <em>IF YOU DARE...</em></p>
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("open");
+    }
+  </script>
+
+</body>
+</html>

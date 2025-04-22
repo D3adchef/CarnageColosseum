@@ -1,0 +1,143 @@
+<!-- Updated Events.html for GitHub Pages -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fight Card</title>
+  <link rel="stylesheet" href="css/style.sheet.css">
+  <link rel="stylesheet" href="css/style.Events.css">
+</head>
+<body class="Events-page">
+  <nav>
+    <div class="nav-container">
+      <h1 class="site-title"><em>Fight Card</em></h1>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Events.html">Events</a></li>          
+        <li><a href="Battle.html">Battle</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="Store.html">Store</a></li>
+        <li><a href="Location.html">Location</a></li>
+        <li><a href="Contact%20Us.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="events-section">
+    <div class="champion-card">
+      <h2 class="champ-title">REIGNING CHAMPION</h2>
+      <div class="card" onclick="openPopup('images/cards/stitches.front.webp', 'images/cards/stitches.back.webp')">
+        <img src="images/cards/stitches.front.webp" alt="Stitches Front" />
+      </div>
+    </div>
+
+    <div class="match-block">
+      <h3>CLOWN GRUDGE MATCH</h3>
+      <div class="matchup-row">
+        <div class="card" onclick="openPopup('images/cards/art.front.webp', 'images/cards/art.back.webp')">
+          <img src="images/cards/art.front.webp" alt="Art" />
+        </div>
+        <img class="vs" src="images/backgrounds/vs.webp" alt="vs" />
+        <div class="card" onclick="openPopup('images/cards/capt.s.front.webp', 'images/cards/capt.s.back.webp')">
+          <img src="images/cards/capt.s.front.webp" alt="Captain Spaulding" />
+        </div>
+      </div>
+    </div>
+
+    <div class="match-block">
+      <h3>ICON VERSUS ICON</h3>
+      <div class="matchup-row">
+        <div class="card" onclick="openPopup('images/cards/jason.front.webp', 'images/cards/jason.back.webp')">
+          <img src="images/cards/jason.front.webp" alt="Jason" />
+        </div>
+        <img class="vs" src="images/backgrounds/vs.webp" alt="vs" />
+        <div class="card" onclick="openPopup('images/cards/m.m.front.webp', 'images/cards/m.m.back.webp')">
+          <img src="images/cards/m.m.front.webp" alt="Michael Myers" />
+        </div>
+      </div>
+    </div>
+
+    <div class="match-block">
+      <h3>DOLL HOUSE MASSACRE</h3>
+      <div class="matchup-row">
+        <div class="card" onclick="openPopup('images/cards/chucky.front.webp', 'images/cards/chucky.back.webp')">
+          <img src="images/cards/chucky.front.webp" alt="Chucky" />
+        </div>
+        <img class="vs" src="images/backgrounds/vs.webp" alt="vs" />
+        <div class="card" onclick="openPopup('images/cards/annabelle.front.webp', 'images/cards/annabelle.back.webp')">
+          <img src="images/cards/annabelle.front.webp" alt="Annabelle" />
+        </div>
+      </div>
+    </div>
+
+    <div class="match-block">
+      <h3>OLD SCHOOL VERSUS NEW SCHOOL</h3>
+      <div class="matchup-row">
+        <div class="card" onclick="openPopup('images/cards/freddy.front.webp', 'images/cards/freddy.back.webp')">
+          <img src="images/cards/freddy.front.webp" alt="Freddy" />
+        </div>
+        <img class="vs" src="images/backgrounds/vs.webp" alt="vs" />
+        <div class="card" onclick="openPopup('images/cards/ghostface.front.webp', 'images/cards/ghostface.back.webp')">
+          <img src="images/cards/ghostface.front.webp" alt="Ghostface" />
+        </div>
+      </div>
+    </div>
+
+    <div class="match-block">
+      <h3>BATTLE FOR HELL</h3>
+      <div class="matchup-row">
+        <div class="card" onclick="openPopup('images/cards/hell.front.webp', 'images/cards/hell.back.webp')">
+          <img src="images/cards/hell.front.webp" alt="Hellraiser" />
+        </div>
+        <img class="vs" src="images/backgrounds/vs.webp" alt="vs" />
+        <div class="card" onclick="openPopup('images/cards/penny.front.webp', 'images/cards/penny.back.webp')">
+          <img src="images/cards/penny.front.webp" alt="Pennywise" />
+        </div>
+      </div>
+    </div>
+
+    <div class="match-block">
+      <h3>GOOD VERSUS EVIL</h3>
+      <div class="matchup-row">
+        <div class="card" onclick="openPopup('images/cards/priest.front.webp', 'images/cards/priest.back.webp')">
+          <img src="images/cards/priest.front.webp" alt="Father" />
+        </div>
+        <img class="vs" src="images/backgrounds/vs.webp" alt="vs" />
+        <div class="card" onclick="openPopup('images/cards/nun.front.webp', 'images/cards/nun.back.webp')">
+          <img src="images/cards/nun.front.webp" alt="The Nun" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="popup" class="popup">
+    <img id="popup-img" src="" alt="card back" />
+    <span class="close-btn" onclick="closePopup()">X</span>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("open");
+    }
+
+    function openPopup(front, back) {
+      const popup = document.getElementById("popup");
+      const img = document.getElementById("popup-img");
+      img.src = front;
+      popup.style.display = "flex";
+      let flipped = false;
+      img.onclick = () => {
+        img.src = flipped ? front : back;
+        flipped = !flipped;
+      };
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+</body>
+</html>

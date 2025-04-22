@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE MORGUE</title>
+  <link rel="stylesheet" href="css/style.sheet.css">
+  <link rel="stylesheet" href="css/style.Store.css">
+</head>
+<body class="Store-page">
+
+  <nav>
+    <div class="nav-container">
+      <h1><em>The Morgue</em></h1>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Events.html">Events</a></li>
+        <li><a href="Battle.html">Battle</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="Store.html">Store</a></li>
+        <li><a href="Location.html">Location</a></li>
+        <li><a href="Contact%20Us.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="menu-box-wrapper">
+    <div class="frosted-menu-box">
+      <h2 class="menu-warning">You can enter <em>THE MORGUE</em>, <strong>but we don't promise you can leave...</strong></h2>
+
+      <table class="menu-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>T-shirts</td>
+            <td>Graphic T-Shirts with your favorite fighter displayed.</td>
+            <td>$25.00</td>
+          </tr>
+          <tr>
+            <td>Hats</td>
+            <td>Snapback hats with various logos and designs.</td>
+            <td>$20.00</td>
+          </tr>
+          <tr>
+            <td>Programs</td>
+            <td>Commemorative programs with the night's fight card, fighter descriptions, and one free Carnage Pals card.</td>
+            <td>$12.00</td>
+          </tr>
+          <tr>
+            <td>Card Packs</td>
+            <td>Carnage Pals card pack with 5 of your favorite fighters' cards. Look for Championship and special editions randomly inserted.</td>
+            <td>$8.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("open");
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="css/style.sheet.css" />
+  <link rel="stylesheet" href="css/style.Contact-Us.css" />
+</head>
+<body class="Contact-Us-page">
+
+  <nav>
+    <div class="nav-container">
+      <h1><em>Contact The Colosseum</em></h1>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Events.html">Events</a></li>
+        <li><a href="Battle.html">Battle</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="Store.html">Store</a></li>
+        <li><a href="Location.html">Location</a></li>
+        <li><a href="Contact%20Us.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="contact-form">
+    <form id="contact-form">
+      <h2>Join the Carnage... If you Dare.</h2>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Full Name" required />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Your Number here" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Email" required />
+
+      <label for="blood-type">Blood Type:</label>
+      <select id="blood-type" name="blood-type" required>
+        <option value="">Choose...</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+      </select>
+
+      <label for="eye-color">Eye Color:</label>
+      <select id="eye-color" name="eye-color" required>
+        <option value="">Choose...</option>
+        <option value="Brown">Brown</option>
+        <option value="Blue">Blue</option>
+        <option value="Green">Green</option>
+        <option value="Hazel">Hazel</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <fieldset>
+        <legend>Have you ever thought about selling your soul? (Optional)</legend>
+        <div class="radio-group">
+          <label><input type="radio" name="soul" value="yes" /> Yes</label>
+          <label><input type="radio" name="soul" value="no" /> No</label>
+          <label><input type="radio" name="soul" value="maybe" /> Maybe</label>
+        </div>
+      </fieldset>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- CUSTOM GLOW ALERT BOX -->
+  <div id="customAlert" class="custom-alert">
+    Thank you for your soul.<br><em>We'll be seeing you... soon.</em>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("open");
+    }
+
+    // Replace default alert with glowing box
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault(); // prevent actual form submission
+      const alertBox = document.getElementById("customAlert");
+      alertBox.style.display = "block";
+      setTimeout(() => {
+        alertBox.style.display = "none";
+        e.target.reset(); // optionally reset form after alert fades
+      }, 4000);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LOCATION</title>
+  <link rel="stylesheet" href="css/style.sheet.css">
+  <link rel="stylesheet" href="css/style.Location.css">
+</head>
+<body class="Location-page">
+
+  <nav>
+    <div class="nav-container">
+      <h1><em>Find Us If You Can...</em></h1>
+
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Events.html">Events</a></li>
+        <li><a href="Battle.html">Battle</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="Store.html">Store</a></li>
+        <li><a href="Location.html">Location</a></li>
+        <li><a href="Contact%20Us.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-content">
+    <div class="content-overlay">
+      <div class="riddle-box">
+        <p class="riddle">
+          No sun ever shines where the blood likes to pool,<br>
+          Beneath rusted bars, where the dead keep their rule.<br>
+          One step from the scream, two turns from the flame,<br>
+          Whisper the right name or be part of the game.<br><br>
+          You’ll find the gates when the clock strikes dread,<br>
+          Behind the booth where the living fear the dead.
+        </p>
+
+        <input type="text" id="secret-input" placeholder="Whisper the name..." />
+        <button onclick="checkRiddle()">Submit</button>
+
+        <p id="riddle-response" class="hidden-response"></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("open");
+    }
+
+    function checkRiddle() {
+      const input = document.getElementById("secret-input").value.toLowerCase().trim();
+      const response = document.getElementById("riddle-response");
+
+      if (input === "stitches") {
+        response.innerHTML = "Coordinates: 66°6′S 13°3′E — You’ve found the gates... but they only open in blood.";
+      } else {
+        response.innerHTML = "That name has no power here...";
+      }
+
+      response.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

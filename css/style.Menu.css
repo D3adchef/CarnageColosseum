@@ -1,0 +1,68 @@
+body.Menu-page {
+  background-image: url("../images/backgrounds/the.icebox.webp");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  color: #ff3c00;
+  min-height: 200vh; /* Enables scrolling */
+  display: flex;
+  flex-direction: column;
+}
+
+/* === FROSTED BOX WRAPPER AT PAGE BOTTOM === */
+.menu-box-wrapper {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+
+/* === FROSTED MENU BOX - STRETCHED + TIGHT TOP PADDING === */
+.frosted-menu-box {
+  width: 100vw;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid #ff3c00;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #ff3c00;
+  backdrop-filter: blur(5px);
+  padding: 20px 40px 40px; /* Less top padding */
+  text-align: center;
+  color: #ff3c00;
+  box-sizing: border-box;
+}
+
+.menu-warning {
+  font-size: 2.5rem;
+  text-shadow: 0 0 5px #ff3c00, 0 0 10px #ff0000;
+  margin-bottom: 2rem;
+}
+
+.menu-table {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  color: #ff3c00;
+  font-family: 'Arial', sans-serif;
+}
+
+.menu-table th,
+.menu-table td {
+  border: 1px solid #ff3c00;
+  padding: 10px;
+  text-align: left;
+}
+
+.menu-table th {
+  background-color: #ff3c00;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.menu-table tr:hover {
+  background-color: #2a0000;
+}

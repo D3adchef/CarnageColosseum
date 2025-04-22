@@ -1,0 +1,33 @@
+body.Home-page {
+  background-image: url("../images/backgrounds/c.c.front.2.webp");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  color: #ff3c00;
+  min-height: 100vh;
+}
+
+.hero-text {
+  color: #f5d76e;
+  text-shadow: 2px 2px 8px black;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+.page-content {
+  min-height: 200vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+.content-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
