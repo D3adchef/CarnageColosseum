@@ -1,4 +1,5 @@
-body {
+/* === General Body Styling === */
+body{
   background-image: url("../images/backgrounds/ring.webp");
   background-size: cover;
   background-position: center;
@@ -12,7 +13,7 @@ body {
 }
 
 .card-roster {
-  margin-top: 130px;
+  margin-top: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +26,7 @@ body {
 }
 
 .card-roster img {
-  width: 100px;
+  width: 125px;
   height: auto;
   cursor: grab;
   border: 2px solid crimson;
@@ -63,7 +64,7 @@ body {
 }
 
 .drop-zone.hover {
-  border-color: gold;
+  border-color: red;
 }
 
 .vs {

@@ -45,17 +45,16 @@
     <div id="drop2" class="drop-zone" ondragover="allowDrop(event)" ondrop="dropCard(event, 'fighter2')">Drop Fighter 2 Here</div>
   </div>
 
-  <button onclick="startBattle()">BATTLE!</button>
-  <button id="resetButton" onclick="resetBattle()">RESET</button>
+  <div class="button-row">
+    <button class="action-button" onclick="startBattle()">BATTLE!</button>
+    <button class="action-button" id="resetButton" onclick="resetBattle()">RESET</button>
+  </div>
 
   <div id="winnerDisplay"></div>
   <div id="overlay"></div>
 
   <script>
-    let selectedFighters = {
-      fighter1: null,
-      fighter2: null
-    };
+    let selectedFighters = { fighter1: null, fighter2: null };
 
     function toggleMenu() {
       const nav = document.getElementById("navLinks");
@@ -63,54 +62,18 @@
     }
 
     const fighterImages = {
-      art: {
-        front: 'images/cards/art.front.webp',
-        back: 'images/cards/art.back.webp'
-      },
-      spaulding: {
-        front: 'images/cards/capt.s.front.webp',
-        back: 'images/cards/capt.s.back.webp'
-      },
-      myers: {
-        front: 'images/cards/m.m.front.webp',
-        back: 'images/cards/m.m.back.webp'
-      },
-      jason: {
-        front: 'images/cards/jason.front.webp',
-        back: 'images/cards/jason.back.webp'
-      },
-      annabelle: {
-        front: 'images/cards/annabelle.front.webp',
-        back: 'images/cards/annabelle.back.webp'
-      },
-      chucky: {
-        front: 'images/cards/chucky.front.webp',
-        back: 'images/cards/chucky.back.webp'
-      },
-      nun: {
-        front: 'images/cards/nun.front.webp',
-        back: 'images/cards/nun.back.webp'
-      },
-      freddy: {
-        front: 'images/cards/freddy.front.webp',
-        back: 'images/cards/freddy.back.webp'
-      },
-      ghostface: {
-        front: 'images/cards/ghostface.front.webp',
-        back: 'images/cards/ghostface.back.webp'
-      },
-      penny: {
-        front: 'images/cards/penny.front.webp',
-        back: 'images/cards/penny.back.webp'
-      },
-      priest: {
-        front: 'images/cards/priest.front.webp',
-        back: 'images/cards/priest.back.webp'
-      },
-      hellraiser: {
-        front: 'images/cards/hell.front.webp',
-        back: 'images/cards/hell.back.webp'
-      }
+      art: { front: 'images/cards/art.front.webp', back: 'images/cards/art.back.webp' },
+      spaulding: { front: 'images/cards/capt.s.front.webp', back: 'images/cards/capt.s.back.webp' },
+      myers: { front: 'images/cards/m.m.front.webp', back: 'images/cards/m.m.back.webp' },
+      jason: { front: 'images/cards/jason.front.webp', back: 'images/cards/jason.back.webp' },
+      annabelle: { front: 'images/cards/annabelle.front.webp', back: 'images/cards/annabelle.back.webp' },
+      chucky: { front: 'images/cards/chucky.front.webp', back: 'images/cards/chucky.back.webp' },
+      nun: { front: 'images/cards/nun.front.webp', back: 'images/cards/nun.back.webp' },
+      freddy: { front: 'images/cards/freddy.front.webp', back: 'images/cards/freddy.back.webp' },
+      ghostface: { front: 'images/cards/ghostface.front.webp', back: 'images/cards/ghostface.back.webp' },
+      penny: { front: 'images/cards/penny.front.webp', back: 'images/cards/penny.back.webp' },
+      priest: { front: 'images/cards/priest.front.webp', back: 'images/cards/priest.back.webp' },
+      hellraiser: { front: 'images/cards/hell.front.webp', back: 'images/cards/hell.back.webp' }
     };
 
     function allowDrop(e) {
@@ -119,9 +82,7 @@
     }
 
     document.querySelectorAll(".drop-zone").forEach(zone => {
-      zone.addEventListener("dragleave", e => {
-        e.currentTarget.classList.remove("hover");
-      });
+      zone.addEventListener("dragleave", e => e.currentTarget.classList.remove("hover"));
     });
 
     document.querySelectorAll(".roster-card").forEach(card => {
